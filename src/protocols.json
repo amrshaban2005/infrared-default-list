@@ -39,6 +39,14 @@
       "imageLight": "dolomite-light.svg",
       "name": "Dolomite",
       "url": "https://dolomite.io"
+    },
+    {
+      "description": "Swap tokens and manage your assets on BurrBear Protocol.",
+      "id": "burrbear",
+      "imageDark": "",
+      "imageLight": "burr_circle.svg",
+      "name": "BurrBear",
+      "url": "https://burrbear.io"
     }
   ]
 }
