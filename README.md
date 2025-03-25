@@ -1,6 +1,6 @@
-# Extending the gauge, token, or validator lists
+# Extending vaults, tokens, or validators
 
-This README provides instructions for third parties on how to add their gauge, token, or validator to our application.
+This README provides instructions for third parties on how to add their vault, token, or validator to our application.
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@ Before you begin, ensure you have:
 
 1. A GitHub account
 2. Basic knowledge of JSON and Git
-3. Details for your gauge, token, or validator
+3. Details for your vault, token, or validator
 
 Please make sure that the respective beraRewardsVault is friendoftheChef. In order to check that please follow the guideline:
 
@@ -34,9 +34,9 @@ Add any new token assets to `/src/assets/tokens` and new protocol assets to `src
 
 ### 3. Update JSON files
 
-1. Navigate to `src/gauges/{network}.json` where `{network}` is the network you're adding to (e.g., "mainnet" for the Berachain mainnet).
+1. Navigate to `src/vaults/{network}.json` where `{network}` is the network you're adding to (e.g., "mainnet" for the Berachain mainnet).
 
-2. Add your gauge to the `gauges` array in the JSON file. Follow this structure:
+2. Add your vault to the `vaults` array in the JSON file. Follow this structure:
 
    ```json
    {
@@ -45,6 +45,7 @@ Add any new token assets to `/src/assets/tokens` and new protocol assets to `src
      "mintUrl": "https://your-protocol-url.com/provide-liquidity",
      "name": "HONEY-WBERA",
      "protocol": "your_protocol_id",
+     "slug": "protocol_id-name(lowercase)",
      "types": ["type1", "type2"],
      "underlyingTokens": ["0x...", "0x..."]
    }
@@ -56,7 +57,7 @@ Add any new token assets to `/src/assets/tokens` and new protocol assets to `src
    - The `name` field only uses the symbols of the underlying tokens with a dash between. Example: `HONEY-WBERA`.
    - `protocol` matches an `id` in the `protocols` array
    - `types` contains valid types from the `types` object
-   - All `underlyingTokens` are listed in the token list (`src/tokens/{network}.json`)
+   - All `underlyingTokens` are listed in the tokens (`src/tokens/{network}.json`)
 
 3. If your protocol is not listed in the `protocols` array, add it:
 
@@ -64,7 +65,8 @@ Add any new token assets to `/src/assets/tokens` and new protocol assets to `src
    {
      "description": "A brief description of your protocol.",
      "id": "your_unique_protocol_id",
-     "image": "your-protocol-image.svg",
+     "imageDark": "your-protocol-image.svg",
+     "imageLight": "your-protocol-image.svg",
      "name": "Protocol",
      "url": "https://your-protocol-url.com"
    }
@@ -76,7 +78,7 @@ Add any new token assets to `/src/assets/tokens` and new protocol assets to `src
    - The `Name` field is a singular word in most cases. `Kodiak` instead of `Kodiak Finance` for example.
    - You've added the protocol image to the `src/assets/protocols` folder if it's not already there.
 
-4. If your gauge uses tokens not in the token list, add them to `src/tokens/{network}.json`:
+4. If your vault uses tokens not in the tokens, add them to `src/tokens/{network}.json`:
 
    ```json
    {
@@ -97,10 +99,10 @@ Add any new token assets to `/src/assets/tokens` and new protocol assets to `src
 ## Guidelines
 
 - Ensure all addresses are valid and correctly formatted.
-- Use clear, descriptive names for your gauge, protocol, and tokens.
+- Use clear, descriptive names for your vault, protocol, and tokens.
 - Provide accurate and concise descriptions.
 - Use appropriate tags and types.
-- The `url` field for gauges should be a direct link to provide liquidity for the LP token.
+- The `url` field for vaults should be a direct link to provide liquidity for the LP token.
 - Make sure you're updating the correct network-specific files (replace `{network}` with the appropriate network name).
 
 ## Review process
@@ -109,7 +111,7 @@ After submitting your PR:
 
 1. Our team will review your submission.
 2. We may request changes or clarifications if needed.
-3. Once approved, your gauge will be merged into the main list and become visible in the app for the specified network.
+3. Once approved, your changes will be merged and become visible in the app for the specified network.
 
 Thank you for contributing to our ecosystem!
 

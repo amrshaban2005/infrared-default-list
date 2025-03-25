@@ -5,13 +5,16 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface GaugeTypesSchema {
-  types: {
-    [k: string]: {
-      description: string
-      name: string
-      [k: string]: unknown
-    }
-  }
+export interface VaultsSchema {
+  gauges: {
+    beraRewardsVault: string
+    lpTokenAddress: string
+    mintUrl?: string
+    name: string
+    protocol: string
+    slug: string
+    types: string[]
+    underlyingTokens: string[]
+  }[]
   [k: string]: unknown
 }
