@@ -43,7 +43,7 @@
     {
       "description": "Swap tokens and manage your assets on BurrBear Protocol.",
       "id": "burrbear",
-      "imageDark": "",
+      "imageDark": "burr_circle.svg",
       "imageLight": "burr_circle.svg",
       "name": "BurrBear",
       "url": "https://burrbear.io"
